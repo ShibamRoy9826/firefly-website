@@ -7,6 +7,7 @@
     --bg2:#252A34;
     --bg3:#252A34;
     --cloud:#EAEAEA;
+    --ground:#dda15e;
 }
 .darkMode{
     --bg:#22177A;
@@ -17,6 +18,7 @@
     --bg2:#EAEAEA;
     --bg3:#252A34;
     --cloud:#aaaaaa;
+    --ground:#bc6c25;
 }
 
 *{
@@ -177,6 +179,22 @@ h1,h3,p{
     position:absolute;
     display:block;
 }
+#grassLeft{
+    width:50vw;
+    height:20vh;
+    position:absolute;
+    left:0;
+    top:82vh;
+    z-index: 5;
+}
+#grassRight{
+    width:50vw;
+    height:20vh;
+    position:absolute;
+    right:0;
+    top:82vh;
+    z-index: 5;
+}
 
 /* Steps */
 .hidden{
@@ -191,10 +209,14 @@ h1,h3,p{
 }
 #steps{
     margin:0;
+    width:100vw;
+    right:0.5rem;
+    top:0.5rem;
     display:flex;
     flex-direction: column;
     position: relative;
     height: auto;
+    background-color:var(--ground);
 }
 .stepsContainer{
     display: flex;

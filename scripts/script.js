@@ -57,3 +57,12 @@ const observer= new IntersectionObserver((entries)=>{
 });
 const hiddenStuff=document.querySelectorAll(".hidden");
 hiddenStuff.forEach((ele)=>observer.observe(ele));
+
+
+window.addEventListener("scroll", () => {
+    let scrollValue = window.scrollY;
+    const gLeft = document.getElementById("grassLeft");
+    const gRight = document.getElementById("grassRight");
+    gLeft.style.transform = `translateX(${-scrollValue}px)`;
+    gRight.style.transform = `translateX(${scrollValue}px)`;
+});
