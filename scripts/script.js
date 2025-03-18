@@ -4,6 +4,11 @@ const darkModeToggle=document.getElementById("darkModeToggle");
 const clouds=document.querySelectorAll(".cloud");
 let darkmodeStatus=false;
 
+aRed=document.getElementById("antiCollisionRed");
+aWhite=document.getElementById("antiCollisionWhite");
+nRed=document.getElementById("navRed");
+nGreen=document.getElementById("navGreen");
+
 scrollDown.addEventListener("click",()=>{
     steps.scrollIntoView({ behavior: "smooth" });
 })
@@ -11,8 +16,17 @@ darkModeToggle.addEventListener("click",()=>{
     darkmodeStatus=darkModeToggle.classList.toggle("clicked");
     if(darkmodeStatus){
         document.documentElement.className="darkMode";
+        // aRed.style.display="block";
+        aWhite.style.display="block";
+        nRed.style.display="block";
+        nGreen.style.display="block";
+
     }else{
         document.documentElement.className="";
+        // aRed.style.display="none";
+        aWhite.style.display="none";
+        nRed.style.display="none";
+        nGreen.style.display="none";
     }
 })
 

@@ -151,11 +151,12 @@ h1,h3,p{
     width:auto;
     left:-10vw;
     top:5rem;
-    animation: idleCircle 8s infinite ease-in-out;
+    animation: idleCircle 40s infinite ease-in-out;
 }
 #planeContainer svg{
     z-index:3
 }
+
 @keyframes idleCircle {
     0% { transform: translate(-10vw, 0px) rotate(30deg); }
     30% { transform: translate(120vw, 20vh) rotate(45deg);}
@@ -179,6 +180,55 @@ h1,h3,p{
     position:absolute;
     display:block;
 }
+#antiCollisionRed{
+    background: var(--primary);
+    width:5px;
+    height:5px;
+    border-radius:100%;
+    position:relative;
+    bottom:3.8rem;
+    left:2.5rem;
+    box-shadow: 0 0 30px 15px var(--primary);
+    animation: blink 1s infinite ease;
+}
+#antiCollisionWhite{
+    display:none;
+    background: var(--fg2);
+    width:5px;
+    height:5px;
+    border-radius:100%;
+    position:relative;
+    bottom:3rem;
+    left:-0.3rem;
+    box-shadow: 0 0 20px 5px var(--fg2);
+    animation: blink 1s infinite ease;
+}
+
+#navRed{
+    display:none;
+    background: var(--primary);
+    width:5px;
+    height:5px;
+    border-radius:100%;
+    position:relative;
+    bottom:4.3rem;
+    left:1rem;
+    box-shadow: 0 0 20px 5px var(--primary);
+    animation: blink 1s infinite ease;
+}
+#navGreen{
+    display:none;
+    background: #00ff48;
+    width:5px;
+    height:5px;
+    border-radius:100%;
+    position:relative;
+    bottom:2.5rem;
+    left:2.5rem;
+    box-shadow: 0 0 20px 5px #00ff48;
+    animation: blink 1s infinite ease;
+}
+
 #grassLeft{
     width:50vw;
     height:20vh;
@@ -273,11 +323,13 @@ footer h3{
 }
 
 
-
-
-
 @keyframes scrolldown {
     0% {transform:translateY(0);}
     50% {transform:translateY(-25px);}
     100% {transform:translateY(0);}
+}
+@keyframes blink {
+    0% {opacity:0;}
+    50% {opacity:1;}
+    100% {opacity:0;}
 }
