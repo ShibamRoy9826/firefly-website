@@ -1,17 +1,38 @@
-*{
+:root{
     --bg:#08D9D6;
     --primary:#FF2E63;
     --secondary:#b3143c;
     --fg:#EAEAEA;
-    --dark:#252A34;
+    --fg2:#EAEAEA;
+    --bg2:#252A34;
+    --bg3:#252A34;
+    --cloud:#EAEAEA;
 }
+.darkMode{
+    --bg:#22177A;
+    --primary:#FF2E63;
+    --secondary:#b3143c;
+    --fg:#820928;
+    --fg2:#EAEAEA;
+    --bg2:#EAEAEA;
+    --bg3:#252A34;
+    --cloud:#aaaaaa;
+}
+
 *{
     font-family: "Tektur", sans-serif;
+    scroll-behavior: smooth;
+    transition:background 0.3s ease;
 }
 body{
     width:auto;
     height:auto;
+    overflow-x:hidden;
+    overflow-y:scroll;
     background-color: var(--bg);
+}
+h1,h3,p{
+    color:var(--bg2)
 }
 
 /* Navbar */
@@ -60,6 +81,11 @@ body{
     stroke:var(--primary);
 }
 
+#darkModeToggle.clicked svg, #darkModeToggle.clicked svg g path{
+    fill:var(--primary);
+    stroke:var(--primary);
+}  
+
 /* Landing */
 #home{
     display:flex;
@@ -102,11 +128,6 @@ body{
 
 }
 
-@keyframes scrolldown {
-    0% {transform:translateY(0);}
-    50% {transform:translateY(-25px);}
-    100% {transform:translateY(0);}
-}
 #scrollDown{
     position: relative;
     top:6rem;
@@ -121,8 +142,53 @@ body{
     width:15rem;
     transform: rotate(35deg);
 }
+#planeContainer{
+    z-index: 3;
+    position:absolute;
+    height:4rem;
+    width:auto;
+    left:-10vw;
+    top:5rem;
+    animation: idleCircle 8s infinite ease-in-out;
+}
+#planeContainer svg{
+    z-index:3
+}
+@keyframes idleCircle {
+    0% { transform: translate(-10vw, 0px) rotate(30deg); }
+    30% { transform: translate(120vw, 20vh) rotate(45deg);}
+    31% { transform: translate(120vw, 20vh) rotateY(180deg) rotate(45deg)}
+    60% { transform: translate(-10vw, 40vh) rotateY(180deg) rotate(45deg);}
+    70% { transform: translate(-10vw, 0px);}
+}
+#cloudContainer{
+    position:absolute;
+
+    display:flex;
+    width:100vw;
+    height:100vh;
+}
+.cloud{
+    position:absolute;
+    width:16rem;
+    height:10rem;
+}
+.cloud svg{
+    position:absolute;
+    display:block;
+}
 
 /* Steps */
+.hidden{
+    opacity:0;
+    transition:all 1s ease;
+    transform:translateY(-50px);
+}
+.show{
+    opacity:1;
+    transform:translate(0);
+
+}
 #steps{
     margin:0;
     display:flex;
@@ -164,8 +230,8 @@ footer{
     padding-bottom:1rem;
     margin-top:4rem;
     flex:1;
-    background-color:var(--dark);
-    color:var(--fg);
+    background-color:var(--bg3);
+    color:var(--fg2);
     width:100%;
     display:flex;
     flex-direction: column;
@@ -175,10 +241,21 @@ footer{
 }
 footer h3{
     background-color:transparent;
+    color:var(--fg2);
     margin:5px;
 }
 .link{
     color:var(--primary);
     margin:0;
     background-color:transparent;
+}
+
+
+
+
+
+@keyframes scrolldown {
+    0% {transform:translateY(0);}
+    50% {transform:translateY(-25px);}
+    100% {transform:translateY(0);}
 }
