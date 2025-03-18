@@ -4,29 +4,42 @@ const darkModeToggle=document.getElementById("darkModeToggle");
 const clouds=document.querySelectorAll(".cloud");
 let darkmodeStatus=false;
 
-aRed=document.getElementById("antiCollisionRed");
-aWhite=document.getElementById("antiCollisionWhite");
+sWhite=document.getElementById("strobeWhite");
 nRed=document.getElementById("navRed");
 nGreen=document.getElementById("navGreen");
 
 scrollDown.addEventListener("click",()=>{
     steps.scrollIntoView({ behavior: "smooth" });
 })
+
+let theme=localStorage.getItem("theme");
+if (theme=="dark"){
+    document.documentElement.className="darkMode";
+    sWhite.style.display="block";
+    nRed.style.display="block";
+    nGreen.style.display="block";
+    darkModeToggle.classList.add("clicked");
+}else{
+    document.documentElement.className="";
+    sWhite.style.display="none";
+    nRed.style.display="none";
+    nGreen.style.display="none";
+}
 darkModeToggle.addEventListener("click",()=>{
     darkmodeStatus=darkModeToggle.classList.toggle("clicked");
     if(darkmodeStatus){
         document.documentElement.className="darkMode";
-        // aRed.style.display="block";
-        aWhite.style.display="block";
+        sWhite.style.display="block";
         nRed.style.display="block";
         nGreen.style.display="block";
+        localStorage.setItem("theme","dark");
 
     }else{
         document.documentElement.className="";
-        // aRed.style.display="none";
-        aWhite.style.display="none";
+        sWhite.style.display="none";
         nRed.style.display="none";
         nGreen.style.display="none";
+        localStorage.setItem("theme","light")
     }
 })
 
@@ -46,11 +59,12 @@ clouds.forEach((cloud)=>{
 })
 function animateClouds() {
     clouds.forEach((cloud) => {
-        let speed= Math.random()*5;
         let currentLeft = parseFloat(getComputedStyle(cloud).left) || 0;
-        cloud.style.left = `${currentLeft + speed}px`;
+        
+        cloud.style.left = `${currentLeft + 2}px`;
         if (currentLeft > window.innerWidth) {
-            cloud.style.left = "-200px"; 
+            let randLeft=Math.floor(Math.random() * 101) + 200;
+            cloud.style.left = `-${randLeft}px`;
         }
     });
 

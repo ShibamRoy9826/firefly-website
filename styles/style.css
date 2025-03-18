@@ -151,7 +151,7 @@ h1,h3,p{
     width:auto;
     left:-10vw;
     top:5rem;
-    animation: idleCircle 40s infinite ease-in-out;
+    animation: idleCircle 20s infinite ease-in-out;
 }
 #planeContainer svg{
     z-index:3
@@ -175,33 +175,25 @@ h1,h3,p{
     position:absolute;
     width:16rem;
     height:10rem;
+    animation: cloudFloat 3s infinite linear;
 }
 .cloud svg{
     position:absolute;
     display:block;
+    animation: cloudFloat 10s infinite linear;
 }
-#antiCollisionRed{
-    background: var(--primary);
-    width:5px;
-    height:5px;
-    border-radius:100%;
-    position:relative;
-    bottom:3.8rem;
-    left:2.5rem;
-    box-shadow: 0 0 30px 15px var(--primary);
-    animation: blink 1s infinite ease;
-}
-#antiCollisionWhite{
+
+#strobeWhite{
     display:none;
     background: var(--fg2);
     width:5px;
     height:5px;
     border-radius:100%;
     position:relative;
-    bottom:3rem;
+    bottom:2.7rem;
     left:-0.3rem;
     box-shadow: 0 0 20px 5px var(--fg2);
-    animation: blink 1s infinite ease;
+    animation: blinkStrobe 1.5s infinite;
 }
 
 #navRed{
@@ -332,4 +324,18 @@ footer h3{
     0% {opacity:0;}
     50% {opacity:1;}
     100% {opacity:0;}
+}
+@keyframes blinkStrobe {
+    0% {opacity:0;}
+    45% {opacity:0;}
+    50% {opacity:1;}
+    51% {opacity:0; }
+    100% {opacity:0;}
+}
+
+@keyframes cloudFloat {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(10px);}
+    0% {transform: translateY(0);}
+
 }
