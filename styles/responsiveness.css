@@ -1,0 +1,36 @@
+@media (max-width:768px) {
+    .cloud{
+        width:8rem;
+        height:3rem;
+    }
+    #controller{
+        display:none;
+    }
+    .landingContainer h1{
+        font-size: 50px !important;
+        margin-top:3rem;
+
+
+    }
+    #orpheus{
+        height:4rem;
+        width:6rem;
+    }
+    #navContainer{
+        height: 3rem;
+        width:10rem;
+    }
+    #navContainer a{
+        width:2rem;
+        height:2rem;
+        margin-bottom:0.5rem;
+        margin-left:0.5rem;
+        margin-right:0.5rem;
+        margin-top:0rem;
+        background-color: var(--fg);
+    }
+    #navContainer a svg{
+        width:2rem !important;
+        height:2rem !important;
+    }
+}
