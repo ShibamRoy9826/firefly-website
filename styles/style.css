@@ -231,7 +231,7 @@ h1,h3,p{
     position:absolute;
     left:0;
     top:82vh;
-    z-index: 5;
+    z-index: 3;
 }
 #grassRight{
     width:50vw;
@@ -239,7 +239,7 @@ h1,h3,p{
     position:absolute;
     right:0;
     top:82vh;
-    z-index: 5;
+    z-index: 3;
 }
 
 /* Steps */

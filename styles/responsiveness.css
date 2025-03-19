@@ -6,11 +6,15 @@
     #controller{
         display:none;
     }
+    .landingContainer{
+        margin-top:2rem;
+    }
     .landingContainer h1{
         font-size: 50px !important;
         margin-top:3rem;
-
-
+    }
+    .heading{
+        font-size:50px !important;
     }
     #orpheus{
         height:4rem;
@@ -33,4 +37,8 @@
         width:2rem !important;
         height:2rem !important;
     }
+    #learnButton{
+        margin-top:5rem;
+    }
+   
 }

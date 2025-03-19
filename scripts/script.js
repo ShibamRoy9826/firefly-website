@@ -85,6 +85,7 @@ const observer= new IntersectionObserver((entries)=>{
 const hiddenStuff=document.querySelectorAll(".hidden");
 hiddenStuff.forEach((ele)=>observer.observe(ele));
 
+const windowWidth=window.innerWidth;
 
 window.addEventListener("scroll", () => {
     let scrollValue = window.scrollY;
@@ -92,4 +93,9 @@ window.addEventListener("scroll", () => {
     const gRight = document.getElementById("grassRight");
     gLeft.style.transform = `translateX(${-scrollValue}px)`;
     gRight.style.transform = `translateX(${scrollValue}px)`;
+    if (scrollValue>=windowWidth/2) {
+        gRight.style.display = "none";
+    } else {
+        gRight.style.display = "block";
+    }
 });
