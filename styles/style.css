@@ -53,6 +53,8 @@ h1,h3,p{
 #orpheus{
     margin-right:auto;
     z-index: 1;
+
+    cursor:pointer;
 }
 #navContainer{
     display:flex;

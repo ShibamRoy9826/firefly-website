@@ -57,6 +57,7 @@ body,html{
     left:1rem;
     z-index:2;
     height:4rem;
+    cursor:pointer;
 }
 #navContainer{
     float:right;

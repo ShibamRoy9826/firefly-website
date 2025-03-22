@@ -32,6 +32,8 @@
         margin-right:0.5rem;
         margin-top:0rem;
         background-color: var(--fg);
+        text-decoration: none;
+        
     }
     #navContainer a svg{
         width:2rem !important;
