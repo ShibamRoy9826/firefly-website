@@ -2,6 +2,7 @@ const scrollDown=document.getElementById("scrollDown");
 const steps=document.getElementById("steps");
 const darkModeToggle=document.getElementById("darkModeToggle");
 const clouds=document.querySelectorAll(".cloud");
+
 let darkmodeStatus=false;
 
 sWhite=document.getElementById("strobeWhite");
@@ -19,18 +20,22 @@ if (theme=="dark"){
     nRed.style.display="block";
     nGreen.style.display="block";
     darkModeToggle.classList.add("clicked");
+    // steps.style.backgroundImage="url('assets/ground.jpg')";
 }else{
     document.documentElement.className="";
     sWhite.style.display="none";
     nRed.style.display="none";
     nGreen.style.display="none";
+    // steps.style.backgroundImage="";
 }
+
 darkModeToggle.addEventListener("click",()=>{
     darkmodeStatus=darkModeToggle.classList.toggle("clicked");
     if(darkmodeStatus){
         document.documentElement.className="darkMode";
         sWhite.style.display="block";
         nRed.style.display="block";
+        // steps.style.backgroundImage="url('assets/ground.jpg')";
         nGreen.style.display="block";
         localStorage.setItem("theme","dark");
 
@@ -40,6 +45,7 @@ darkModeToggle.addEventListener("click",()=>{
         nRed.style.display="none";
         nGreen.style.display="none";
         localStorage.setItem("theme","light")
+        // steps.style.backgroundImage="";
     }
 })
 
